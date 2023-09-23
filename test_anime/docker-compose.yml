@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  redis:
+    image: redis:latest
+    container_name: redis_cache
+    ports:
+      - "6379:6379"
+    environment:
+      - REDIS_PASSWORD=pwd  # Remplacez par votre mot de passe
+    volumes:
+      - ./redis-data:/data
+    command: redis-server --requirepass pwd --appendonly yes

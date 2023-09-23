@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher Or Lower</title>
+    <link rel="stylesheet" href="../static/game_templatev2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/405102745f.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+</head>
+
+<body>
+    <div id="defaite_screen">
+        <div id="defaite_popup">
+            Vous avez perdu
+        </div>
+        
+        <div id="replay_button">
+            Rejouer
+        </div>
+        <div id="leave_button">
+            Quitter
+        </div>
+
+    </div>
+
+<div id="img_left">
+
+    <div class="anime_title_div">
+        <h4 id="anime_title_left" class="anime_title"></h4>
+    </div>
+
+    <div id="current_score_div">
+        Current score : <span id="current_score">9</span>
+    </div>
+
+
+
+    <div id="left_ranking">
+        <span class="anime_left_ranking">15</span>
+        <br>
+        (popularity rank)
+    </div>
+
+    
+    <!--
+    <img id="left_pic" class="left_added_img"  src="../static/img/v3_5.png">
+    <img id="left_replacement_pic" class="" src="../static/img/v3_7.png">
+    -->
+    <img id="left_pic" class="left_added_img" src="">
+    <img id="left_replacement_pic" class="" src="">
+
+
+</div>
+
+
+<div id="img_right">
+
+    <div class="anime_title_div">
+        <h4 id="anime_title_right" class="anime_title"></h4>
+    </div>
+
+    <div id="best_score_div">
+        Best score : <span id="best_score">9</span>
+    </div>
+
+
+
+
+ 
+    <div id="right_ranking">
+        <span class="anime_right_ranking">15</span>
+        <br>
+        (popularity rank)
+    </div>
+
+    <!--
+    <img id="right_pic" class="right_added_img" src="../static/img/v3_7.png">
+    <img id="right_replacement_pic" class="" src="../static/img/v3_5.png">
+    -->
+    <img id="right_pic" class="right_added_img" src="">
+    <img id="right_replacement_pic" class="" src="">
+
+    <div id="choosing_module">
+
+        <div id="click_module">
+            <div id="higher">Higher</div>
+            <div id="or">OR</div>
+            <div id="lower">Lower</div>
+        </div>
+        <div id="question">rank on my anime list ?</div>
+
+    </div>
+
+
+</div>
+
+<script src="../static/game_scriptv2.js"></script> 
+
+</body>
+</html>

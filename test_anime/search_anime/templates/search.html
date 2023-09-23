@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<header>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projet en cours</title>
+    <script src="https://kit.fontawesome.com/405102745f.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+    <!-- Inclusion du fichier css pour le style du jeu -->
+    <link rel="stylesheet" href="../static/style.css">
+</header>
+
+<body>
+
+
+<h1 class="title"> Projet en cours </h1>
+
+<p>
+    &nbsp;&nbsp;
+</p>
+<div id="empty_space">
+</div>
+
+
+<div id="search_section">
+
+
+    <div id="search_fields">
+        Chercher un anime : 
+        <br>
+        <div id="search_bar">
+            <input type="text" id="input_search" placeholder="Oregairu">
+
+            <i class="fa fa-search" aria-hidden="true"></i>
+
+        </div>
+    </div>
+
+    <br>
+
+    <div id="display_result">
+
+        Start searching something
+    </div>
+
+    <div>
+
+
+    </div>
+
+
+</div>
+
+<div class="row">
+    <div class="column_section">
+        <div id="img1">
+            
+        </div>
+
+        <div class="text_box">
+            <div class="section_title">
+            Higher or Lower
+            <a href="{% url 'higher_or_lower' %}">Here</a>
+            </div>
+            <div class="section_subtitle">
+            Incoming
+            </div>
+        </div>
+    </div>
+    <div class="column_section">
+        <div id="img2">
+        </div>
+
+        <div class="text_box">
+            <div class="section_title">
+                Guess the song
+                </div>
+                <div class="section_subtitle">
+                Incoming
+                </div>
+        </div>
+    </div>  
+    <div class="column_section">
+        <div id="img3">
+
+        </div>
+        <div class="text_box">
+            <div class="section_title">
+                Updates notes
+                </div>
+                <div class="section_subtitle">
+                Incoming
+                </div>
+        </div>
+    </div>
+</div>
+
+<script src="../static/script_search.js"></script>
+
+
+</body>
+</html>

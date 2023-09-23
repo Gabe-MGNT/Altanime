@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<header>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projet en cours</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/405102745f.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+    <!-- Inclusion du fichier css pour le style du jeu -->
+    <link rel="stylesheet" href="../static/recommander_style.css">
+</header>
+
+<body>
+
+    <div class="bg-image"></div>
+
+    <h1>Find Me Something (Content Based)</h1>
+
+    <div id="main_part">
+
+        <div id="choice_div">
+            <span>Choice : </span>
+            <div id="selector_choice">
+                <img src="../static/img/pngegg (2).png">
+
+            </div>
+
+        </div>
+
+
+        <div id="anime_selection">
+
+            <div id="selection_window">
+
+                <input type="text" id="input_search" placeholder="Oregairu">
+                <div id="display_result">
+
+                    Start searching something
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+        <div id="results_div">
+
+            <span>Recommandation : </span>
+            <div id="weight_div">
+                <div class="selector">
+                <span>Summary influence : </span>
+                <select name="summary">
+                    <option value=1>High Influence</option>
+                    <option value=0>Low Influence</option>
+                </select>
+                </div>
+                <div class="selector">
+
+                <span>Studio influence : </span>
+                <select name="studio">
+                    <option value=1>High Influence</option>
+                    <option value=0>Low Influence</option>
+                </select>
+            </div>
+            <div class="selector">
+
+                <span>Genre influence : </span>
+                <select name="genre">
+                    <option value=1>High Influence</option>
+                    <option value=0>Low Influence</option>
+                </select>
+                </div>
+                <div class="selector">
+
+                <span>Theme influence : </span>
+                <select name="theme">
+                    <option value=1>High Influence</option>
+                    <option value=0>Low Influence</option>
+                </select>
+                </div>
+
+
+            </div>
+            <div id="results_screen">
+
+            </div>
+        </div>
+
+
+    </div>
+
+<script src="../static/recommandation_script.js"></script>
+
+</body>
+</html>

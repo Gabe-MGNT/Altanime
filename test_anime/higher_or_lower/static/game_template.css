@@ -1,0 +1,290 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    min-height: 500px;
+    display: flex;
+    background-color: black;
+}
+
+#img_left,
+#img_right,
+#central_panel {
+    flex: 1;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: black;
+
+}
+
+#img_left,
+#img_right{
+    width:40%;
+    max-width: 40%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    align-items: center;
+}
+
+#central_panel{
+    width:20%;
+    max-width: 20%;
+    height: 100%;
+    align-items: center;
+    color: white;
+    text-align: center;
+    top:0;
+}
+
+#img_left img,
+#img_right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(1px);
+}
+
+#central_panel img{
+    max-width: 50%;
+    max-height: auto;
+    object-fit: cover;
+}
+
+
+
+#current_score_div{
+    margin-top:30%;
+    font-size: 1.0em;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#current_score{
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+#defaite_screen{
+
+        position: fixed; /* Sit on top of the page content */
+        display: flex; /* Hidden by default */
+        visibility: hidden;
+        flex-direction: column;
+        text-align: center; 
+        align-items: center;
+        width: 100%; /* Full width (cover the whole page) */
+        height: 100%; /* Full height (cover the whole page) */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.8); /* Black background with opacity */
+        z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+
+
+}
+
+#defaite_popup{
+    color: white;
+    position: relative;
+    padding: 30px;
+    margin-top: 25%;
+    background-color:rgba(0,0,0,0.7);
+    font-size: 2.0em;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+#replay_button{
+    color: white;
+    position: relative;
+    padding: 30px;
+    margin-top: 10%;
+    background-color:rgba(0,0,0,0.7);
+    font-size: 2.0em;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: 0.6s;
+
+
+}
+
+
+#replay_button:hover {
+    color:green;
+    transform: scale(1.5);
+}
+
+#leave_button{
+    color: white;
+    position: relative;
+    padding: 30px;
+    margin-top: 2%;
+    background-color:rgba(0,0,0,0.7);
+    font-size: 2.0em;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: 0.6s;
+}
+
+#leave_button:hover {
+    color:red;
+    transform: scale(1.5);
+}
+
+#best_score_div{
+    margin-top:50%;
+    font-size: 1.0em;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+#best_score{
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+
+
+.anime_title {
+    color: white;
+    background-color: black;
+
+    z-index: 1;
+    position: absolute;
+
+    
+    padding:10px;
+    border-radius: 20px;
+    border: 3px solid white;
+    text-align: center;
+    top : 2%;
+    margin-top: 5px;
+    font-size: 1.3em;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+    left: 50%; /* Centre horizontalement par rapport au parent (img_left ou img_right) */
+    transform: translate(-50%); /* Centre parfaitement */
+}
+
+h6{
+    visibility: hidden;
+
+    color: white;
+    background-color: red;
+
+    z-index: 1;
+    position: absolute;
+
+    
+    padding:10px;
+    border-radius: 20px;
+    border: 3px solid white;
+    text-align: center;
+    top : 40%;
+    margin-top: 5px;
+    font-size: 1.3em;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+    left: 50%; /* Centre horizontalement par rapport au parent (img_left ou img_right) */
+    transform: translate(-50%); /* Centre parfaitement */
+
+}
+
+
+#choosing_module{
+    z-index: 1;
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    left: 50%; /* Centre horizontalement par rapport au parent (img_left ou img_right) */
+    transform: translate(-50%); 
+    text-align: center;
+    align-items: center;
+}
+
+
+#question{
+    color: white;
+    width: 70%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:rgba(0, 0, 0, 0.6);
+    padding: 2px 10px 2px 10px;
+    border-radius: 20px;
+    border : solid 2px white;
+    font-size: 0.7em;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+#click_module {
+    position: relative;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-align: center;
+}
+
+#lower {
+    position: relative;
+    z-index: 2;
+    width: fit-content;
+    left:50%;
+    transform: translate(-100%, 0%); /* Centre parfaitement */
+    background-color: black;
+
+    top : -15px;
+    padding: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+
+    border-radius: 20px;
+    border: solid white 3px;
+}
+
+#or {
+    z-index: 3;
+    position: relative;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    padding: 10px;
+    border-radius: 20px;
+    border: solid white 3px;
+}
+
+#higher {
+    position: relative;
+    z-index: 2;
+    width: fit-content;
+
+    top : 18px;
+    left:50%;
+    transform: translate(0%, 0%);
+
+    padding: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background-color: black;
+
+    border-radius: 20px;
+    border: solid white 3px;
+}

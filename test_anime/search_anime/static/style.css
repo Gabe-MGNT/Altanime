@@ -1,0 +1,166 @@
+* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+}
+
+html, body {
+    max-width: 100%;
+}
+
+.column_section {
+    height: 400px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    width: 33%;
+    
+
+}
+
+.column_section > div:first-child {
+    transform: scale(1);
+    transition: transform 1.5s;
+}
+
+.column_section:hover > div:first-child {
+    transform: scale(1.2);
+}
+
+.title{
+text-align: center;
+font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+
+}
+
+
+.row{
+    margin-top: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
+
+}
+
+.text_box{
+    position: absolute;
+    background-color:white;
+    padding: 5px;
+    width: 90%;
+    height:60px;
+    margin-left: 10px;
+
+    margin-bottom: 10px;
+    bottom: 0;
+}
+
+.section_title{
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.section_subtitle{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+    font-weight: lighter;
+    font-size: 0.8em;
+}
+
+
+#img1{
+    background-image: url(./img/hol.png);
+    background-size:cover;
+    background-color: black;
+    filter: blur(2px);
+    width: 100%;
+    height:100%;
+}
+#img2{
+    background-image: url(./img/music.jpg);
+    background-size:cover;
+    background-color: black;
+    filter: blur(2px);
+    width: 100%;
+    height:100%;
+}
+#img3{
+    background-image: url(./img/notes1.jpg);
+    background-size:cover;
+    background-color: black;
+    filter: blur(2px);
+    width: 100%;
+    height:100%;
+}
+
+#search_section{
+    align-items: center;
+    text-align: center;
+
+    margin-left: 30px;
+    margin-right: 30px;
+
+    
+
+    border-color: black 2px;
+    border-radius: 20px;
+    border-style: solid;
+
+
+    
+}
+
+#search_bar{
+    position: relative;
+    align-items: center;
+    text-align: center;
+    padding:15px;
+    background-color:rgba(0,0,0,0.3);
+    width:40%;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input{
+    margin-top: 10px;
+    outline:0;
+    background-color:rgba(0,0,0,0);
+    border-width: 0 0 2px;
+    color: white;
+    border-color: white;
+}
+
+input::placeholder{
+    color: white;
+}
+
+
+
+#display_result{
+    padding: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 2%;
+    background-color:rgba(0,0,0,0.1);
+}
+
+#a{
+
+ padding:3px;
+}
+
+.row_anime {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.col_anime {
+    flex: 0 0 calc(33.33% - 10px); /* Divisez la largeur en 3 colonnes avec un peu d'espace entre elles */
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
