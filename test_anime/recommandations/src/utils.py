@@ -9,10 +9,17 @@ def get_cosine_similarity_from_column(df, column_name, categorie=True):
     res = None
     if categorie == True:
         res =  encode_categories(df, column_name)
-        return cosine_similarity(pd.DataFrame(list(res)))
+        zipped_array = np.apply_along_axis(lambda x: zip(df.id, x), 1, cosine_similarity(pd.DataFrame(list(res))))
+
+
+        zipped_array_o = zip(df.id, zipped_array)
+        return zipped_array_o
     else:
         res =  encode_text(df, column_name)
-        return cosine_similarity(res, res)
+
+        zipped_array = np.apply_along_axis(lambda x: zip(df.id, x), 1, cosine_similarity(res, res))
+        zipped_array_o = zip(df.id, zipped_array)
+        return zipped_array_o
 
 
 def encode_text(df, column_name):

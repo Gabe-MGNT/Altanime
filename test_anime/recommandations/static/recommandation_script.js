@@ -12,10 +12,11 @@ function putTableData(response){
     var rows = "";
     var results = response.results;
 
+
     for (var i = 0; i < results.length; i += 3) {
         rows += "<div class='row_anime'>";
         for (var j = i; j < i + 3 && j < results.length; j++) {
-            rows += "<div class='col_anime' data-id='"+results[j].id+"' data-title='"+results[j].title+"'>" + results[j].title + "</div>";
+            rows += "<div class='col_anime' data-id='"+results[j].id+"' data-title='"+results[j].title+"'>" + "<img src='"+ results[j].image +"' >"+results[j].title + "</div>";
         }
         rows += "</div>";
     }
@@ -26,15 +27,19 @@ function putTableData(response){
     $(".col_anime").on('click', function () {
         document.getElementById("anime_selection").style.visibility = "hidden";
         document.querySelector("#selector_choice").innerHTML = $(this).data("title");
-        getRecommandations($(this).data("title"));
+        current_id = $(this).data("id");
+        getRecommandations($(this).data("title"), $(this).data("id"));
     });
 }
 
-function getRecommandations(title_anime){
+let current_id = 0;
+
+function getRecommandations(title_anime, id){
     $.ajax({
         method: 'GET',
         url : "http://127.0.0.1:8000/api/get_recom",
         data: {
+            id: id,
             title: title_anime,
             weight_themes: document.querySelector('select[name="theme"]').value,
             weight_studio: document.querySelector('select[name="studio"]').value,
@@ -49,12 +54,12 @@ function getRecommandations(title_anime){
 
 function putTableDataRecom(response){
     var rows = "";
-    var results = response.results;
+    var results = response;
 
     for (var i = 0; i < results.length; i += 2) {
         rows += "<div class='row_anime_recom'>";
         for (var j = i; j < i + 2 && j < results.length; j++) {
-            rows += "<div class='col_anime_recom' data-id='"+results[j].id+"' data-title='"+results[j].title+"'>" + results[j].title + "</div>";
+            rows += "<div class='col_anime_recom' data-id='"+results[j].id+"' data-title='"+results[j].title+"'>" + + "<img src='"+ results[j].image +"' >"+ results[j].title + "</div>";
         }
         rows += "</div>";
     }
@@ -74,7 +79,7 @@ function handleSelectionChange() {
     // Vérifiez si le contenu n'est pas vide et que la valeur sélectionnée a changé
     if (anime_selected !== "" ) {
         // Appelez la fonction getRecom() ou toute autre fonction que vous souhaitez
-        getRecommandations(anime_selected);
+        getRecommandations(anime_selected, current_id);
     }
 }
 

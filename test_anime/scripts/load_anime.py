@@ -1,4 +1,5 @@
 from search_anime.models import Anime
+from recommandations.models import SimilarityMatrix
 import csv
 import os
 csv.field_size_limit(256<<10)

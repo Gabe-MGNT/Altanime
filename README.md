@@ -13,11 +13,12 @@ All the data were taken from MAL using scrapy.
 - [x] Implemented user interface for the current functionnalities
 - [x] Create dynamic recommandations with few selectable criterias
 - [x] Build the foundation of the "higher or lower" type game
+- [ ] Only use internal database
 - [ ] Best score working
-- [ ] Use an external database (SQL) for the anime and recommandations matrix
-- [ ] Add image in DB (no more locally)
+- [ ] Add image in DB 
 - [ ] Remove Redis cache to make recommandations
 - [ ] Dockerize everything
 - [ ] Improve JS script
 - [ ] Add user based recommandations
 - [ ] Implement interface for anime details
+- [ ] Use an external database (SQL) for the anime and recommandations matrix (later)
