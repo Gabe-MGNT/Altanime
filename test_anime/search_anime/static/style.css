@@ -164,3 +164,8 @@ input::placeholder{
     padding: 10px;
     border: 1px solid #ccc;
 }
+
+.col_anime img{
+    position: relative;
+    width: 100%;
+}

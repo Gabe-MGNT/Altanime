@@ -77,10 +77,12 @@ h1{
 #selector_choice{
     cursor: pointer;
     margin-top:5%;
+    /*    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
     margin-left: 10px;
     width: 25vh;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     background-color:#473b31;
     align-items: center;
@@ -89,9 +91,11 @@ h1{
 
 #selector_choice img {
     display: block;
+    position: relative;
     background-color: green;
     border-radius:25px;
-    width: 50%;
+    width: 80%;
+    position: relative;
 
 }
 
@@ -226,11 +230,13 @@ input::placeholder{
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: 5;
     opacity: 0.8; /* Ajustez l'opacité au besoin */
     box-shadow: 0 0 10px 10px rgba(0,0,0,0.4);
     border-radius: 50px; /* Ajoutez un arrondi aux coins */
 
 }
+
 
 
 
@@ -253,7 +259,6 @@ input::placeholder{
 .col_anime_recom img{
     position: relative;
     width: 100%;
-
 }
 
 

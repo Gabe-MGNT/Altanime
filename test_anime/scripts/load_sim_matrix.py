@@ -49,30 +49,8 @@ for id, sim_matrix in summary_sim:
         "studio_sim" : list(studio_sim_id[1]),
         "themes_sim": list(themes_sim_id[1]),
         "genre_sim" : list(genre_sim_id[1]),
-        }  # Votre matrice de similarités au format JSON
+        } 
 
     nouvelle_similarite = SimilarityMatrix(anime=anime_w_id, matrice=matrice_similarite)
     nouvelle_similarite.save()
 
-
-    pass
-
-"""
-for index, id in enumerate(df["id"]):
-    print(index)
-
-    if id == 'id':
-        continue
-    anime_w_id = Anime.objects.get(id=id)  # Récupérer le film par son ID
-
-
-
-    matrice_similarite = {
-        "genre_sim": genre_sim[index],
-        "studios_sim": studios_sim[index],
-        "themes_sim": themes_sim[index],
-        "summary_sim": summary_sim[index],
-        }  # Votre matrice de similarités au format JSON
-
-    nouvelle_similarite = SimilarityMatrix(anime=anime_w_id, matrice=matrice_similarite)
-    nouvelle_similarite.save()"""

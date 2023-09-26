@@ -24,9 +24,17 @@ function putTableData(response){
     document.getElementById("display_result").innerHTML = "aaaa";
     $("#display_result").html(rows);
 
-    $(".col_anime").on('click', function () {
+    $(".col_anime").on('click', function (e) {
         document.getElementById("anime_selection").style.visibility = "hidden";
         document.querySelector("#selector_choice").innerHTML = $(this).data("title");
+
+        let current_image_src = $(this).find('img').attr('src');
+        const img = document.createElement("img");
+        img.classList.add("current_selection");
+        img.src = current_image_src;
+
+        document.querySelector("#selector_choice").appendChild(img);
+
         current_id = $(this).data("id");
         getRecommandations($(this).data("title"), $(this).data("id"));
     });
@@ -59,7 +67,7 @@ function putTableDataRecom(response){
     for (var i = 0; i < results.length; i += 2) {
         rows += "<div class='row_anime_recom'>";
         for (var j = i; j < i + 2 && j < results.length; j++) {
-            rows += "<div class='col_anime_recom' data-id='"+results[j].id+"' data-title='"+results[j].title+"'>" + + "<img src='"+ results[j].image +"' >"+ results[j].title + "</div>";
+            rows += "<div class='col_anime_recom' data-id='"+results[j].id+"' data-title='"+results[j].title+"'>" + "<img src='"+ results[j].image +"' >"+ results[j].title + "</div>";
         }
         rows += "</div>";
     }

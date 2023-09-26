@@ -3,6 +3,12 @@ var anime1;
 var anime2;
 let currentScore = 0;
 
+window.addEventListener("beforeunload", function (e) {
+    e.preventDefault();
+    e.returnValue = "Vous avez un score en cours. Êtes-vous sûr de vouloir quitter ?";
+});
+
+
 function getNewRandomAnime(){
     $.ajax({
         method: 'GET',
@@ -36,18 +42,31 @@ function startGame(){
 
     currentScore = 0;
     document.getElementById("current_score").innerHTML=currentScore;
-    document.getElementById("best_score").innerHTML=currentScore;
+    getBestScore();
 
 }
 
-window.onload = function () {
-    if (localStorage.getItem("hasCodeRunBefore") === null) {
-        startGame();
-        localStorage.setItem("hasCodeRunBefore", true);
-    } else if (performance.navigation.type === 1) {
-        // La page a été rechargée (rafraîchie)
-        startGame();
+
+
+function getBestScore(){
+    const currentBestScore = Cookies.get("best_score");
+    if (currentBestScore === undefined){
+        Cookies.set('best_score', 0, { expires: 365 }); // L'expiration est définie en jours
+        document.getElementById("best_score").innerHTML = 0;
+    }else{
+        document.getElementById("best_score").innerHTML = currentBestScore;
     }
+}
+
+function setBestScore(score){
+    const currentBestScore = Cookies.get("best_score");
+    if (currentBestScore === undefined || score>currentBestScore){
+        Cookies.set('best_score', score, { expires: 365 }); // L'expiration est définie en jours
+    }
+}
+
+window.onload = function () {
+    startGame();
 }
 
 
@@ -70,6 +89,8 @@ document.getElementById("higher").addEventListener('click', () => {
     if (anime2.popularity>=anime1.popularity) {
         waitingNextRound();
         currentScore = currentScore + 1;
+        setBestScore(currentScore);
+
         document.getElementById("current_score").innerHTML=currentScore;
 
 
@@ -91,6 +112,7 @@ document.getElementById("higher").addEventListener('click', () => {
 
 
     }else{
+        setBestScore(currentScore);
         failure();
     }
 
@@ -104,6 +126,8 @@ document.getElementById("lower").addEventListener('click', () => {
         waitingNextRound();
 
         currentScore = currentScore + 1;
+        setBestScore(currentScore);
+
         document.getElementById("current_score").innerHTML=currentScore;
 
         anime1 = {...anime2};
@@ -122,6 +146,7 @@ document.getElementById("lower").addEventListener('click', () => {
 
 
     }else{
+        setBestScore(currentScore);
         failure();
     }
 

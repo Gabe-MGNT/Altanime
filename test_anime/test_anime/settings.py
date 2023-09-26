@@ -27,15 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis://:pwd@localhost:6379',  # Spécifiez l'emplacement de votre serveur Redis
-        'OPTIONS': {
-            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-        }
-    }
-}
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

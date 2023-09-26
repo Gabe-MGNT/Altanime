@@ -21,9 +21,6 @@ import operator
 from search_anime.models import Anime
 from search_anime.serializers import AnimeSerializer, AnimeDetailSerializer
 
-def SearchView(request):
-    return render(request, "search.html")
-
 def BaseView(request):
     return render(request, "recommander.html")
 
@@ -54,7 +51,6 @@ class GetRecommandations(ReadOnlyModelViewSet):
         sim_genres = sim_matrix["genre_sim"]
         # Get the pairwsie similarity scores of all movies with that movie
 
-
         sim_themes_score = [x[1] for x in sim_themes]
         sim_studios_score = [x[1] for x in sim_studios]
         sim_summary_score = [x[1] for x in sim_summary]
@@ -62,11 +58,6 @@ class GetRecommandations(ReadOnlyModelViewSet):
 
         anime_sim_index = [x[0] for x in sim_genres]
 
-
-
-        #cosine_global_sim = (weights[0] * self.sim_genres) + (weights[1] * self.sim_studios) + (weights[2] * self.sim_summary) + (weights[3] * self.sim_genres)
-        #similarities = [self.sim_themes[idx], self.sim_studios[idx], self.sim_summary[idx], self.sim_genres[idx]]
-        #similarities = [np.array(sim_themes), np.array(sim_studios), np.array(sim_summary), np.array(sim_genres)]
         similarities = [np.array(sim_themes_score), np.array(sim_studios_score), np.array(sim_summary_score), np.array(sim_genre_score)]
 
         weights = np.array([weight_themes,weight_studio,weight_summary,weight_genres])
@@ -75,36 +66,10 @@ class GetRecommandations(ReadOnlyModelViewSet):
 
         zipped_array = zip(anime_sim_index, cosine_global_sim)
         sorted_zipped_array = sorted(zipped_array, key=lambda x: x[1], reverse=True)
-        top_10_elements = sorted_zipped_array[:10]
+        top_elements = sorted_zipped_array[:30]
 
-
-        recommandations = [x[0] for x in top_10_elements]
-
-        """
-        #sim_scores = list(enumerate(cosine_global_sim[idx]))
-        sim_scores = list(enumerate(cosine_global_sim))
-
-        sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
-
-        top_similar = sim_scores[1:10+1]
-
-        movie_indices = [i[0] for i in top_similar]
-        print(sim_matrix["indices"])
-        recommandations = pd.Series(sim_matrix["indices"])[movie_indices].index
-        """
-
-        
-
+        recommandations = [x[0] for x in top_elements]        
          
         print("TIME TO RECOMMAND : ", time.time()-start)
-
-        """query = Q()
-        for titre in recommandations:
-            print(titre)
-            query |= Q(id__icontains=titre)  # Vous pouvez ajuster le type de recherche ici
-
-        recommanded_animes = Anime.objects.filter(query)
-"""
         recommanded_animes = Anime.objects.filter(id__in=recommandations)
-        print(recommanded_animes)
         return  recommanded_animes
