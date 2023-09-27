@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<header>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projet en cours</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/405102745f.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+    <!-- Inclusion du fichier css pour le style du jeu -->
+    <link rel="stylesheet" href="../static/recommander_stylev2.css">
+</header>
+
+<body>
+    <div class="bg-image"></div>
+
+        <div class="scroller">
+        <div class="panel">
+
+            <h1>Find Me Something (Content Based)</h1>
+
+            <div id="main_part">
+
+                <div id="choice_div">
+                    <span>Choice : </span>
+                    <div id="selector_choice">
+                        <img src="../static/img/plus_sign.png">
+                        <span>Click to search something!</span>
+
+                    </div>
+
+                </div>
+
+
+                <div id="anime_selection">
+
+                    <div id="selection_window">
+
+                        <input type="text" id="input_search" placeholder="Oregairu">
+                        <div id="display_result">
+
+                            Start searching something
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+
+                <div id="results_div">
+
+                    <span>Recommandation parameters : </span>
+                    <div id="weight_div">
+                        <div class="selector">
+                        <span>Summary influence : </span>
+                        <select name="summary">
+                            <option value=2>High Influence</option>
+                            <option value=1>Moderate Influence</option>
+                            <option value=0>Low Influence</option>
+                        </select>
+                        </div>
+                        <div class="selector">
+
+                        <span>Studio influence : </span>
+                        <select name="studio">
+                            <option value=2>High Influence</option>
+                            <option value=1>Moderate Influence</option>
+                            <option value=0>Low Influence</option>
+                        </select>
+                    </div>
+                    <div class="selector">
+
+                        <span>Genre influence : </span>
+                        <select name="genre">
+                            <option value=2>High Influence</option>
+                            <option value=1>Moderate Influence</option>
+                            <option value=0>Low Influence</option>
+                        </select>
+                        </div>
+                        <div class="selector">
+
+                        <span>Theme influence : </span>
+                        <select name="theme">
+                            <option value=2>High Influence</option>
+                            <option value=1>Moderate Influence</option>
+                            <option value=0>Low Influence</option>
+                        </select>
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+                
+
+
+
+            </div>
+            <div id="view_recom">
+                <img src="../static/img/arrow_down.png">
+                View recommandations
+                <img src="../static/img/arrow_down.png">
+            </div>
+        </div>
+
+        <div class="panel" id="panel_recom">
+            
+            <div class="recomm" id="recom1">
+
+                <img class="bg_recom" id="bg_recom1" src="../static/img/default_template.png">
+
+                <img class="affiche_recom" id="affiche_recom1" src="../static/img/default_template.png">
+
+                <span class="bandeau">Recommandation</span>
+
+                <span class="title" id="title1">Titre</span>
+
+            </div>
+            <div class="recomm" id="recom2">
+                <img class="bg_recom" id="bg_recom2" src="../static/img/default_template.png">
+                
+                <img class="affiche_recom" id="affiche_recom2" src="../static/img/default_template.png">
+                <span class="bandeau">Recommandation</span>
+
+                <span class="title" id="title2">Titre</span>
+
+
+            </div>
+            <div class="recomm" id="recom3">
+                <img class="bg_recom" id="bg_recom3" src="../static/img/default_template.png">
+                <img class="affiche_recom" id="affiche_recom3" src="../static/img/default_template.png">
+
+                <span class="bandeau">Recommandation</span>
+
+                <span class="title" id="title3">Titre</span>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+        
+
+<script src="../static/recommandation_script.js"></script>
+
+
+</body>
+</html>

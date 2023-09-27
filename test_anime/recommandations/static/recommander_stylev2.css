@@ -1,0 +1,404 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    min-height: 500px;
+    min-width: 900px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    color : #d2c5ba;
+}
+
+
+.panel {
+    scroll-snap-align:start;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Ajoutez cette propriété */
+    overflow: hidden;
+}
+
+.scroller {
+    height: 100vh;    
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 0;
+}
+
+.bg-image{
+    background-image: url("./img/y2015-03-17-11_generated.jpg");
+    height: 100%;
+    width: 100%;
+    filter:blur(4px);
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    z-index: -2;
+    position: absolute;
+}
+
+h1{
+    position: relative;
+    margin-top: 0; /* Réinitialisez la marge supérieure */
+
+    top:0%;
+    left: 50%;
+    transform: translateX(-50%); /* Pour centrer horizontalement */
+    width: 100%;
+    padding-top:10px;
+    padding-bottom: 10px;
+    border: 1px solid #d2c5ba;
+    background-color:rgba(71, 59, 49, 0.6);
+
+}
+#main_part{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    height: 70%;
+}
+
+
+
+#choice_div{    
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    max-width: 40%;
+    height:100%;
+    align-items: center;
+
+}
+
+#results_div{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+    height:100%;
+    align-items: center;
+}
+
+
+#selector_choice{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    max-width: 50%;
+    height:100%;
+    margin-top:5%;
+    padding: 15px;
+    background-color:rgba(71, 59, 49, 0.6);
+    border-radius: 25px;
+    border: 1px solid #d2c5ba;
+
+
+}
+
+.selector{
+    position: relative;
+    left: 0;
+    width: 100%;
+    margin-right: auto;
+    background-color:rgba(71, 59, 49, 0.8);
+    padding: 10px;
+    margin-top: 2%;
+    border-radius: 25px;
+    border: 1px solid #d2c5ba;
+}
+
+select{
+    background-color:#d2c5ba;
+    font-family: 'Open Sans', sans-serif;
+    color : rgb(71, 59, 49);
+    border: none;
+
+}
+
+
+#selector_choice img {
+    display: block;
+    position: relative;
+    border-radius:25px;
+    width: 40%;
+    position: relative;
+    filter: saturate(500%) contrast(800%) brightness(500%) 
+    invert(80%) sepia(30%) hue-rotate(10deg);
+
+}
+
+#selector_choice > span {
+    margin-top:10%;
+}
+
+#choice_div > span,
+#results_div > span {
+    width:70%;
+    max-width: 70%;
+    padding: 10px 0px 10px 0px;
+    background-color:rgba(71, 59, 49, 0.8);
+    border-radius: 25px;
+    border: 1px solid #d2c5ba;
+}
+
+
+
+
+
+#weight_div{
+    margin-top: 5%;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 40px 10px 40px;
+
+    background-color:rgba(71, 59, 49, 0.6);
+    border-radius: 25px;
+    border: 1px solid #d2c5ba;
+
+}
+
+#view_recom{
+    position: absolute;
+    height: 8%;
+    margin-left: auto;
+    margin-right: auto;
+
+    bottom: 0;
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    width: 100%;
+    background-color:rgba(71, 59, 49, 0.8);
+    border: 1px solid #d2c5ba;
+}
+
+#view_recom img{
+    width: 5%;
+    margin-top: auto;
+    margin-bottom: auto;
+    filter: saturate(500%) contrast(800%) brightness(500%) 
+    invert(80%) sepia(30%) hue-rotate(10deg);
+}
+
+
+#results_screen{
+    background-color:#473b31;
+        /*    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+
+    height: 100%;
+    width: 100%;
+    margin-top: 1%;
+    overflow: auto;
+
+
+}
+
+
+#anime_selection{
+    visibility: hidden;
+    position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(10px);
+    z-index: 5; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+#selection_window{
+
+    position: fixed; /* Sit on top of the page content */
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background-color:#473b31;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 70%;
+    height: 70%;
+    border-radius:25px;
+    border:2px solid #d2c5ba;
+    padding: 20px;
+    overflow: auto;
+
+}
+
+input{
+    margin-top: 10px;
+    outline:0;
+    background-color:rgba(0,0,0,0.2);
+    border-width: 0 0 2px;
+    color: white;
+    border-color: white;
+}
+
+input::placeholder{
+    color: white;
+}
+
+#display_result{
+    margin-top: 5%;
+    padding: 2px;
+    z-index: 8;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 2%;
+    background-color:rgba(0,0,0,0.1);
+}
+
+#a{
+
+ padding:3px;
+}
+
+.row_anime {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.col_anime {
+    position: relative;
+    width: 28%;
+    max-width: 28%;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.col_anime img{
+    position: relative;
+    width: 100%;
+
+}
+
+
+.col_anime:hover::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    height: 50%;
+    background-image: url("./img/pngegg (2).png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 5;
+    opacity: 0.8; /* Ajustez l'opacité au besoin */
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.4);
+    border-radius: 50px; /* Ajoutez un arrondi aux coins */
+
+}
+
+
+
+
+
+.row_anime_recom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.col_anime_recom {
+    position: relative;
+    flex-basis: 50%;
+    background-color: black;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.col_anime_recom img{
+    position: relative;
+    width: 100%;
+}
+
+
+
+#panel_recom {
+    display: flex;
+    flex-direction: row;
+}
+
+.recomm{
+    flex-basis: 33%;
+    overflow:hidden;
+    position: relative;
+}
+
+.title{
+    position: absolute;
+    left:50%;
+    transform: translate(-50%);
+    bottom:5%;
+    width: 60%;
+    border-radius: 25px;
+    z-index: 5;
+    padding: 10px 40px 10px 40px;
+
+    background-color:rgba(71, 59, 49, 0.8);
+    border: 1px solid #d2c5ba;
+}
+
+.affiche_recom{
+    position: absolute;
+    left:50%;
+    top:50%;
+    width: 80%;
+    transform:translate(-50%, -50%);
+    z-index: 5;
+}
+
+.bandeau{
+    position: absolute;
+    right:0%;
+    top:5%;
+    z-index: 5;
+    left:25%;
+    width:100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transform: rotate(35deg);
+
+    background-color:rgba(71, 59, 49, 0.8);
+    border: 1px solid #d2c5ba;}
+
+
+.bg_recom{
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(4px);
+    z-index: 2;
+}
