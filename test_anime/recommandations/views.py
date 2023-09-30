@@ -22,7 +22,7 @@ from search_anime.models import Anime
 from search_anime.serializers import AnimeSerializer, AnimeDetailSerializer
 
 def BaseView(request):
-    return render(request, "recommander.html")
+    return render(request, "recommanderv2.html")
 
 
 class GetRecommandations(ReadOnlyModelViewSet):
@@ -68,7 +68,7 @@ class GetRecommandations(ReadOnlyModelViewSet):
         sorted_zipped_array = sorted(zipped_array, key=lambda x: x[1], reverse=True)
         top_elements = sorted_zipped_array[:30]
 
-        recommandations = [x[0] for x in top_elements]        
+        recommandations = [x[0] for x in top_elements] 
          
         print("TIME TO RECOMMAND : ", time.time()-start)
         recommanded_animes = Anime.objects.filter(id__in=recommandations)

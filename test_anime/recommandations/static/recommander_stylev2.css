@@ -176,6 +176,8 @@ select{
 
 #view_recom{
     position: absolute;
+    cursor: pointer;
+
     height: 8%;
     margin-left: auto;
     margin-right: auto;
@@ -187,6 +189,7 @@ select{
     width: 100%;
     background-color:rgba(71, 59, 49, 0.8);
     border: 1px solid #d2c5ba;
+    visibility: hidden;
 }
 
 #view_recom img{
@@ -348,12 +351,14 @@ input::placeholder{
 #panel_recom {
     display: flex;
     flex-direction: row;
+    visibility: hidden;
 }
 
 .recomm{
     flex-basis: 33%;
     overflow:hidden;
     position: relative;
+
 }
 
 .title{
@@ -377,6 +382,7 @@ input::placeholder{
     width: 80%;
     transform:translate(-50%, -50%);
     z-index: 5;
+
 }
 
 .bandeau{
@@ -391,7 +397,11 @@ input::placeholder{
     transform: rotate(35deg);
 
     background-color:rgba(71, 59, 49, 0.8);
-    border: 1px solid #d2c5ba;}
+    border: 1px solid #d2c5ba;
+
+    font-size: 0.8em;
+
+}
 
 
 .bg_recom{
@@ -401,4 +411,19 @@ input::placeholder{
     object-fit: cover;
     filter: blur(4px);
     z-index: 2;
+
+}
+
+
+
+
+
+.recomm:hover .bg_recom{
+
+    filter: saturate(500%) blur(4px);;
+}
+
+
+.recomm:hover .affiche_recom{
+    transform:translate(-50%, -50%) scale(1.1);
 }

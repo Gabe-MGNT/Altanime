@@ -47,7 +47,7 @@ def nique(id_anime, images):
                 print(name, url_image)
                 urllib.request.urlretrieve(url_image, "img/"+str(id_anime)+"/"+name+"-"+str(nb)+".jpg")
                 print("Attendre 2s ou 5s")
-                time.sleep(random.randint(4,7))
+                time.sleep(random.randint(5,7))
                 print("Fin attente")
                 
 
