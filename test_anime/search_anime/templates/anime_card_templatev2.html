@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Details</title>
+    <link rel="stylesheet" href="../../static/anime_card_templatev2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/405102745f.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vibrant.js/1.0.0/Vibrant.min.js"></script>
+
+</head>
+<body>
+    
+    <div id="displayer">
+
+        <div id="left_panel">
+            <!--Affiche-->
+            <img src={{ anime.image }}>
+        </div>
+        <div class="scroller">
+        <div class="panel">
+        <div id="right_panel">
+
+            <div id="first_row">
+
+                <div id="sub_panel">
+                    <div id="first_subrow">
+                        <div id="title">
+
+                            <span id="subtitle">Title:</span>
+                            <br>
+                            <span id="main_title">{{ anime.title }}</span>
+
+                        </div>
+                    </div>
+                    <div id="second_subrow">
+                        <div id="favorites">
+                            <div id="favorites_content">
+                            <span id="favorites_subtitle">Favorites:</span>
+                            <br>
+                            <span id="favorites_number">{{ anime.favorites }}</span>
+                        </div>
+                        </div>
+                        <div id="ranking">
+
+                            <div id="ranking_content">
+                                <span id="ranking_subtitle">Ranking:</span>
+                                <br>
+                                <span id="ranking_number">#{{ anime.ranking }}</span>
+                            </div>
+
+                        </div>
+                        <div id="populairty">
+
+                            <div id="popularity_content">
+                                <span id="popularity_subtitle">Popularity:</span>
+                                <br>
+                                <span id="popularity_number">{{ anime.popularity }}</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="aired_date">
+
+                    <div id="aired_date_content">
+                        <span id="aired_date_subtitle">Aired date:</span>
+                        <br>
+                        <span id="aired_date_date">{{ anime.aired_date }}</span>
+                        <br>
+                        <span id="aired_date_status">({{ anime.status }})</span>
+                    </div>
+                    
+
+                </div>
+
+                
+
+            </div>
+
+            <div id="second_row">
+
+                <div id="themes">
+
+                    <div id="themes_content">
+                        <span id="themes_subtitle">Themes:</span>
+                        <br>
+                        <span id="themes_list">{{ anime.themes }}</span>
+                    </div>
+
+                </div>
+                <div id="genres">
+
+                    <div id="genres_content">
+                        <span id="genres_subtitle">Genres:</span>
+                        <br>
+                        <span id="genres_list">{{ anime.genres }}</span>
+                    </div>
+
+                </div>
+                <div id="type">
+
+                    <div id="type_content">
+                        <span id="type_subtitle">Type:</span>
+                        <br>
+                        <span id="type_list">{{ anime.type }}</span>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div id="third_row" clas="">
+
+                <div id="summary">
+                    <div id="summary_content">
+                    <span>Summary (below)</span>
+
+            
+                </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        </div>
+        <div class="panel" id="summary_panel">
+
+            
+            <div id="summary_content_panel">
+                <span>Summary:</span>
+                <p>{{ anime.summary }}</p>
+            </div>
+            
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../../static/anime_card_scriptv2.js"></script>
+
+</body>
+</html>

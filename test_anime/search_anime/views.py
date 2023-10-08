@@ -32,7 +32,7 @@ def AnimeDetail(request, id):
 
     print("anime : ", anime)
 
-    return render(request, "anime_card_template.html", {"anime":anime})
+    return render(request, "anime_card_templatev2.html", {"anime":anime})
 
 
 class AnimeView(ReadOnlyModelViewSet):
